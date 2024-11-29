@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 module.exports = router;
 
+
+let  Courses=[];
 router.post('/Courses',(req,res)=>{
     let course_name=req.body.course_name;
     Courses.push({name:course_name});
@@ -20,6 +22,6 @@ router.delete('/Courses',(req,res)=>{
     res.status(200).json("ok");
 
 });
-router.get('/CourseList', (req, res) => {
+router.get('/Courses', (req, res) => {
     res.status(200).json(Courses);
 });
