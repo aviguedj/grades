@@ -10,6 +10,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
+let db_M= require('./database');
+global.db_pool = db_M.pool;
+
 const courses_R =require('./routers/courses_R');
 app.use('/C/', courses_R);
 
